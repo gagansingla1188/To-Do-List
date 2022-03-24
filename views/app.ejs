@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo App</title>
+
+    <!--FAVICON LINK-->
+    <link
+      rel="icon"
+      href="https://images-platform.99static.com/npPkJtQ4LlzlkMFtNk40Ag-NQSk=/293x293:1719x1719/600x600/99designs-contests-attachments/126/126549/attachment_126549459"
+      type="image/x-icon"
+    />
+
+    <!--LINK FOR ADDING DELETE BUTTON-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--LINK FOR ADDING ADD BUTTON-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--LINK OF CUSTOM STYLESHEET-->
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  </head>
+
+
+  <body>
+    <!--DIVS FOR ADDING BACKGROUND ANIMATION-->
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+
+    <!--TODO APP-->
+    <div class="container">
+      <h1 class="heading">TODO App</h1>
+      <div class="addTask">
+        <!--FORM FOR ADDING NEW TASK TO THE LIST-->
+        <form action="/addTask" method="POST">
+          <p>DESCRIPTION</p>
+          <input
+            type="text"
+            name="description"
+            placeholder="What do you need to do ?"
+            required
+          />
+          <!--hr-->
+          <label for="category">CATEGORY</label>
+            <!--hr-->
+          <select name="category" id="category" class="classic">
+            <option>Choose a category</option>
+            <option value="school">School</option>
+            <option value="work">Work</option>
+            <option value="personal">Personal</option>
+            <option value="others">Others</option>
+          </select>
+          <br>
+          <p>DUE DATE</p>
+          <input type="date" name="dueDate" placeholder="dd/mm/yyyy" required />
+          
+          <br>
+          <button class="btn"><i class="fa-solid fa-plus"></i>ADD TASK</button>
+        </form>
+      </div>
+      <!--TODO LIST-->
+      <div class="taskList">
+        <!--IF THERE IS NO TASK IN THE LIST-->
+        <% if(Tasks.length==0) { %>
+            <h2>All the tasks are done..✌✌</h2>
+        <% } else { %>
+          <!--DISPLAYING TASKS PRESENT IN THE LIST-->
+        <% for(task of Tasks) { %>
+            <table>
+              <tr>
+                <td><p class="paragraph" ><%= task.description %></p></td>
+                <td><p class="paragraph" ><%= task.dueDate %> </h3></td>
+            
+            <td><p class="category"><%= task.category %></p></td>
+            <td id="dlt-btn">
+              <button class="dlt">
+              <a href="/deleteTask/?id=<%= task._id %>">
+                <i class="fa fa-trash-o" style="font-size:35px;color:white"></i>
+                DELETE TASK
+              </a>
+            </button>
+          </td>
+          </tr>
+          </table>
+       <% } %>
+       <% } %>
+      </div>
+    </div>
+  
+  </body>
+</html>

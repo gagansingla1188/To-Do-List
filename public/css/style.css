@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Lobster&family=Roboto&family=Signika+Negative:wght@300&display=swap");
+
+/*RESET*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Balsamiq Sans", cursive;
+  font-family: "Lobster", cursive;
+  font-family: "Roboto", sans-serif;
+  font-family: "Signika Negative", sans-serif;
+}
+
+body {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGFniQ-IXsIxpDSARWznm7PwMiXn2ApY4cPW6vklXhhFIPZbIC2uQ8M0l-Po6hMLfzQL4&usqp=CAU");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  border: 2px solid transparent;
+  font-size: 20px;
+}
+
+/*ANIMATION*/
+.bg {
+  animation: slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+  bottom: 0;
+  left: -50%;
+  opacity: 0.5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+}
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 4s;
+}
+
+.bg3 {
+  animation-duration: 5s;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+}
+
+/*CONTAINER CLASS*/
+.container {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(30px);
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
+  margin-top: 20px;
+}
+
+/*HEADING*/
+.heading {
+  text-align: center;
+  color: whitesmoke;
+  text-shadow: 2px 2px rgba(251, 251, 246, 0.2);
+  font-size: 70px;
+}
+
+.addTask {
+  /*border: 2px solid white;*/
+  margin: 5px;
+}
+
+.taskList {
+  /* border: 2px solid white;*/
+  margin: 5px;
+  margin-top: 10px;
+}
+
+/*INPUT FIELDS*/
+input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+  margin-right: 40px;
+  padding-left: 5px;
+}
+
+/*ON FOCUS*/
+input:focus {
+  background-color: transparent;
+}
+
+p {
+  font-size: 20px;
+}
+
+/*ADD TASK BUTTON*/
+.btn {
+  border: none;
+  color: #71e075;
+  padding: 12px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: #70e474;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  font-size: 20px;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/*HOVER EFFECTS*/
+.btn:hover {
+  background-color: #4caf50;
+  color: white;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+tr {
+  background-color: rgb(21, 163, 245);
+}
+
+.dlt {
+  background-color: rgb(236, 40, 40);
+  border: none;
+  color: white;
+  padding: 4px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  padding: 10px 30px;
+}
+
+.dlt:hover {
+  background-color: red;
+}
+.dlt a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+p,
+label {
+  display: inline-block;
+  font-size: 25px;
+  padding: 5px;
+  font-weight: bold;
+}
+
+label {
+  margin-top: 5px;
+}
+
+/*PLACEHOLDER*/
+::placeholder {
+  color: white;
+  font-size: 15px;
+}
+
+/*DROPDOWN*/
+select {
+  background-color: white;
+  border: thin solid blue;
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  /*line-height: 1em;*/
+  padding: 0.5em 2em 0.5em 0.5em;
+  margin: 0;
+}
+
+select {
+  background-color: white;
+  border: thin solid rgb(73, 230, 151);
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+  margin: 0;
+}
+
+select.classic {
+  background-image: linear-gradient(45deg, transparent 50%, blue 50%),
+    linear-gradient(135deg, blue 50%, transparent 50%),
+    linear-gradient(to right, skyblue, skyblue);
+  background-position: calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px), 100% 0;
+  background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
+  background-repeat: no-repeat;
+}
+
+select.classic:focus {
+  background-image: linear-gradient(45deg, white 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, white 50%),
+    linear-gradient(to right, gray, gray);
+  background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, 100% 0;
+  background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
+  background-repeat: no-repeat;
+  border-color: rgb(2, 131, 66);
+  outline: 0;
+}
+
+#dlt-btn {
+  text-align: right;
+}
